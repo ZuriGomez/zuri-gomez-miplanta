@@ -1,4 +1,4 @@
-@use "./variables.scss" as *;
+@use "./variables" as *;
 @use "./typography.scss" as *;
 @use "./mixins.scss" as *;
 
@@ -10,6 +10,7 @@
   font-weight: 600;
   margin: 0;
   padding: 0;
+  color: $secondary-miplanta-black;
 }
 
 body {

@@ -1,7 +1,7 @@
 import "../MainButton/MainButton.scss";
 
-const MainButton = ({ text }) => {
-  return <button type="submit" className="main-button">{text}</button>;
+const MainButton = ({ text, onClick, type="button" }) => {
+  return <button type={type} className="main-button" onClick={onClick}>{text}</button>;
 };
 
 export default MainButton;

@@ -9,6 +9,13 @@
 
   &:hover {
     background-color: $main-buttons-miplanta-hover;
+    border: 1px solid $main-buttons-miplanta-active;
+  }
+
+  &:active {
+    background-color: $main-buttons-miplanta-active;
+    border: 1px solid $main-buttons-miplanta-hover;
+    outline: none;
   }
 }
 
