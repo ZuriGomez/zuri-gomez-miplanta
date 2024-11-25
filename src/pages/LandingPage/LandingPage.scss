@@ -1,0 +1,23 @@
+@use "../../styles/variables" as *;
+@use "../../styles/global" as *;
+
+.landing-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap:2rem;
+
+    &__logo {
+        width: 20rem;
+        height: 20rem;
+    }
+
+    &__buttons {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap:1rem;
+        padding-left: 4rem;
+        padding-right: 4rem;
+    }
+}

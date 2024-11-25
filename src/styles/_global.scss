@@ -1,12 +1,13 @@
-@use "./variables" as *;
-@use "./typography" as *;
-@use "./mixins" as *;
+@use "./variables.scss" as *;
+@use "./typography.scss" as *;
+@use "./mixins.scss" as *;
 
 *,
 *::before,
 *::after {
   box-sizing: border-box;
-  font-family: "Titillium Web", sans-serif;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
   margin: 0;
   padding: 0;
 }

@@ -1,0 +1,14 @@
+@use "../../../styles/variables" as *;
+@use "../../../styles/global" as *;
+
+.main-button {
+  width: 100%;
+  background-color: $primary-miplanta-green;
+  border: none;
+
+
+  &:hover {
+    background-color: $main-buttons-miplanta-hover;
+  }
+}
+
