@@ -1,2 +1,13 @@
 @use "../../styles/variables" as *;
 @use "../../styles/global" as *;
+
+.signup__page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 3rem;
+
+    &-logo {
+        height: 2.5rem;
+    }
+}
