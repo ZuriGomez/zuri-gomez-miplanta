@@ -1,10 +1,12 @@
 import React from 'react'
+import Header from '../../components/Header/Header'
+import "../HomePage/HomePage.scss"
 
 function HomePage() {
   return (
-    <div>
-      Hello, I'm a Home Page
-    </div>
+    <>
+      <Header/>
+    </>
   )
 }
 
