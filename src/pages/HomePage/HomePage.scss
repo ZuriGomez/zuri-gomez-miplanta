@@ -1,0 +1,9 @@
+@use "../../styles/variables" as *;
+@use "../../styles/global" as *;
+
+.home-page__button {
+  position: fixed;
+  bottom: 1rem;
+  right:40%;
+  z-index: 1000;
+}
