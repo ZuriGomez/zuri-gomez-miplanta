@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import SellerAvatar from "../../assets/images/avatar-placeholder.png";
 import sunlight from "../../assets/icons/sunlight.svg";
 import watering from "../../assets/icons/watering.svg";
 import height from "../../assets/icons/height.svg";
 import temperature from "../../assets/icons/temperature.svg";
+import likeInactive from "../../assets/icons/like.svg";
+import likeActive from "../../assets/icons/like_active.svg";
 import "../ListingPage/ListingPage.scss";
 import Header from "../../components/Header/Header";
 
@@ -13,6 +16,7 @@ const BASE_URL = import.meta.env.VITE_BACKEND_URL;
 function ListingPage() {
   const { listingId } = useParams();
   const [listing, setListing] = useState(null);
+  const [isLiked, setIsLiked] = useState(false);
 
   useEffect(() => {
     const getListing = async () => {
@@ -27,6 +31,10 @@ function ListingPage() {
     };
     getListing();
   }, [listingId]);
+
+  const handleLikeClick = () => {
+    setIsLiked(!isLiked);
+  };
 
   if (!listing) {
     return <p>Loading...</p>;
@@ -43,56 +51,133 @@ function ListingPage() {
           className="listing-details__photo"
         />
         <div className="listing-details__seller">
-          <p className="listing-page__seller-name"> {listing.seller_name}</p>
+          <img
+            className="listing-details__seller-avatar"
+            src={SellerAvatar}
+            alt="Seller Avatar"
+          />
+          <p className="listing-details__seller-name"> {listing.seller_name}</p>
         </div>
         <div className="listing-details__output">
-          <label htmlFor="description" className="listing-details__output-label">description:</label>
-          <p className="listing-details__output-value">{listing.description}</p>
+          <label
+            htmlFor="description"
+            className="listing-details__output-label"
+          >
+            description:
+          </label>
+          <p className="listing-details__output-value1">
+            {listing.description}
+          </p>
         </div>
-        <div>
-          <label htmlFor="maintenance" className="listing-details__output-label">maintenance:</label>
+        <div className="listing-details__output">
+          <label
+            htmlFor="maintenance"
+            className="listing-details__output-label"
+          >
+            maintenance:
+          </label>
           <p className="listing-details__output-value">{listing.maintenance}</p>
         </div>
-        <div>
+        <div className="listing-details__output">
           <label className="listing-details__output-label">pot included:</label>
-          <p className="listing-details__output-value"> {listing.pot_included}</p>
+          <p className="listing-details__output-value">
+            {listing.pot_included}
+          </p>
         </div>
-        <div>
-          {listing.pot_description && (
-            <p className="listing-page__detail">
-              <strong>Pot Description:</strong> {listing.pot_description}
+        {listing.pot_included === "yes" && (
+          <div className="listing-details__output">
+            <label
+              htmlFor="pot_description"
+              className="listing-details__output-label"
+            >
+              pot description:
+            </label>
+            <p className="listing-details__output-value2">
+              {listing.pot_description}
             </p>
-          )}
-        </div>
-        <div>
-          <label htmlFor="delivery" className="listing-details__output-label">delivery:</label>
+          </div>
+        )}
+        <div className="listing-details__output">
+          <label htmlFor="delivery" className="listing-details__output-label">
+            delivery:
+          </label>
           <p className="listing-details__output-value">{listing.delivery}</p>
         </div>
         <section className="listing-details-box">
-          <div>
-            <img src={height} alt="height icon" className="listing-details-box__icon"/>
-            <label htmlFor="height" className="listing-details-box__label">height</label>
-            <p className="listing-details-box__input"> {listing.height}cm</p>
+          <div className="listing-details-box__item">
+            <img
+              src={height}
+              alt="height icon"
+              className="listing-details-box__item-icon"
+            />
+            <label htmlFor="height" className="listing-details-box__item-label">
+              height
+            </label>
+            <p className="listing-details-box__item-input">
+              {" "}
+              {listing.height}cm
+            </p>
           </div>
-          <div>
-            <img src={sunlight} alt="sunlight icon" className="listing-details-box__icon" />
-            <label htmlFor="sunlight icon" className="listing-details-box__label">sunlight</label>
-            <p className="listing-details-box__input"> {listing.sunlight}</p>
+          <div className="listing-details-box__item">
+            <img
+              src={sunlight}
+              alt="sunlight icon"
+              className="listing-details-box__item-icon"
+            />
+            <label
+              htmlFor="sunlight icon"
+              className="listing-details-box__item-label"
+            >
+              sunlight
+            </label>
+            <p className="listing-details-box__item-input">
+              {listing.sunlight}
+            </p>
           </div>
-          <div>
-            <img src={temperature} alt="temperature icon" className="listing-details-box__icon" />
-            <label htmlFor="temperature" className="listing-details-box__label">temperature</label>
-            <p className="listing-details-box__input"> {listing.temperature}</p>
+          <div className="listing-details-box__item">
+            <img
+              src={temperature}
+              alt="temperature icon"
+              className="listing-details-box__item-icon"
+            />
+            <label
+              htmlFor="temperature"
+              className="listing-details-box__item-label"
+            >
+              temperature
+            </label>
+            <p className="listing-details-box__item-input">
+              {listing.temperature}
+            </p>
           </div>
-          <div>
-            <img src={watering} alt="watering icon" className="listing-details-box__icon"/>
-            <label htmlFor="watering" className="listing-details-box__label">watering</label>
-            <p className="listing-details-box__input">{listing.watering}</p>
+          <div className="listing-details-box__item">
+            <img
+              src={watering}
+              alt="watering icon"
+              className="listing-details-box__item-icon"
+            />
+            <label
+              htmlFor="watering"
+              className="listing-details-box__item-label"
+            >
+              watering
+            </label>
+            <p className="listing-details-box__item-input">
+              {listing.watering}
+            </p>
           </div>
         </section>
-        <p className="listing-page__detail">
-          <strong>Price:</strong> ${listing.price}
-        </p>
+        <section className="listing__bar">
+          <img
+            src={isLiked ? likeActive : likeInactive}
+            alt="Like Icon"
+            className="listing-details__bar-icon"
+            onClick={handleLikeClick}
+          />
+          <div className="listing-details__bar-moreinfo">
+            <p className="listing-details__bar-moreinfo__price"> ${listing.price} </p>
+          </div>
+        </section>
       </div>
     </>
   );

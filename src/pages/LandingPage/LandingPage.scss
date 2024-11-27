@@ -1,11 +1,11 @@
 @use "../../styles/variables" as *;
-@use "../../styles/global" as *;
 
 .landing-page {
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap:2rem;
+    margin-top: 4rem;
 
     &__logo {
         width: 20rem;

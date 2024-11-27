@@ -1,5 +1,4 @@
 @use "../../../styles/variables" as *;
-@use "../../../styles/global" as *;
 
 .main-button {
   width: 100%;
@@ -7,7 +6,9 @@
   border: none;
   color:$primary-miplanta-white;
   border-radius: 1rem;
-
+  padding: .5rem 0;
+  font-weight: 400;
+  cursor: pointer;
 
   &:hover {
     background-color: $main-buttons-miplanta-hover;

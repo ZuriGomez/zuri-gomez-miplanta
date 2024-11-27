@@ -111,11 +111,11 @@ function LoginForm() {
         </p>
       )}
       <div className="login-form__buttons">
-        <MainButton text="Log In" type="submit" />
+        <MainButton text="log in" type="submit" />
         <p className="login-form__buttons-link">
           Don't have an account?
           <Link to="/signup" className="login-form__buttons-link_hyperlink">
-            Sign up here
+            {" "}Sign up here
           </Link>
         </p>
       </div>
