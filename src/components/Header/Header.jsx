@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Logo from "../../assets/logos/miplanta_logo2.svg"
-import cartIcon from "../../assets/icons/cart.svg"
-import avatar from "../../assets/images/avatar-placeholder.png"
-import "../Header/Header.scss"
+import Logo from "../../assets/logos/miplanta_logo2.svg";
+import cartIcon from "../../assets/icons/cart.svg";
+import avatar from "../../assets/images/avatar-placeholder.png";
+import "../Header/Header.scss";
 
 function Header() {
   return (
