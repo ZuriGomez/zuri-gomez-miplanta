@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import axios from "axios";
 import SellerAvatar from "../../assets/images/avatar-placeholder.png";
 import sunlight from "../../assets/icons/sunlight.svg";
@@ -7,7 +7,7 @@ import watering from "../../assets/icons/watering.svg";
 import height from "../../assets/icons/height.svg";
 import temperature from "../../assets/icons/temperature.svg";
 import likeInactive from "../../assets/icons/like.svg";
-import likeActive from "../../assets/icons/like_active.svg";
+import likeActive from "../../assets/icons/like-active.svg";
 import "../ListingPage/ListingPage.scss";
 import Header from "../../components/Header/Header";
 import AddToCart from "../../components/Buttons/AddToCart/AddToCart";
@@ -58,14 +58,14 @@ function ListingPage() {
           className="listing-details__photo"
         />
         <div className="listing-details__seller">
-          <div className="listing-details__seller-wrapper">
+          <Link to={`/seller/${listing.user_id}`} className="listing-details__seller-wrapper">
             <img
               className="listing-details__seller-wrapper-avatar"
               src={SellerAvatar}
               alt="Seller Avatar"
             />
             <p className="listing-details__seller-wrapper-name"> {listing.seller_name}</p>
-          </div>
+          </Link>
           <p className="listing-details__seller-count">{listing.review_count} reviews</p>
           <ChatButton></ChatButton>
        </div>

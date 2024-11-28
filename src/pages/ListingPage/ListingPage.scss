@@ -35,6 +35,8 @@
             justify-content: flex-start;
             align-items: center;
             gap:.5rem;
+            cursor: pointer;
+            text-decoration: none;
         
             &-avatar {
                 width: 3rem;
@@ -44,6 +46,7 @@
             &-name {
                 font-size: 1rem;
                 font-weight: 400;
+                text-decoration: none;
             }
         }
 
@@ -134,6 +137,7 @@
 
 .listing__bar {
     width: 100vw;
+    height: 4rem;
     margin-top: 2rem;
     background-color: $primary-miplanta-green ;
     display: flex;
@@ -145,10 +149,11 @@
     right: 50%;
     margin-left: -50vw;
     margin-right: -50vw;
+    align-items: center;
 
     &-icon {
-        height:4rem;
-        width: 4rem;
+        height:3rem;
+        width:3rem;
         margin-left: 4rem;
         margin-right: 2rem;
     }
