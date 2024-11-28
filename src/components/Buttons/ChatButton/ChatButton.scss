@@ -1,11 +1,12 @@
-@use "../../../styles//variables" as *;
+@use "../../../styles/variables" as *;
 
-.add-to-cart-button {
+.chat-button {
     padding: 0.5rem 0.5rem;
     border-radius: 1rem;
     border: none;
     cursor: pointer;
     background-color: $primary-miplanta-white;
+    width: 25%;
 
     &:hover,:focus {
         border: .2rem solid $main-buttons-miplanta-active;

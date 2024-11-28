@@ -11,6 +11,7 @@ import likeActive from "../../assets/icons/like_active.svg";
 import "../ListingPage/ListingPage.scss";
 import Header from "../../components/Header/Header";
 import AddToCart from "../../components/Buttons/AddToCart/AddToCart";
+import ChatButton from "../../components/Buttons/ChatButton/ChatButton";
 
 const BASE_URL = import.meta.env.VITE_BACKEND_URL;
 
@@ -57,14 +58,17 @@ function ListingPage() {
           className="listing-details__photo"
         />
         <div className="listing-details__seller">
-          <img
-            className="listing-details__seller-avatar"
-            src={SellerAvatar}
-            alt="Seller Avatar"
-          />
-          <p className="listing-details__seller-name"> {listing.seller_name}</p>
+          <div className="listing-details__seller-wrapper">
+            <img
+              className="listing-details__seller-wrapper-avatar"
+              src={SellerAvatar}
+              alt="Seller Avatar"
+            />
+            <p className="listing-details__seller-wrapper-name"> {listing.seller_name}</p>
+          </div>
           <p className="listing-details__seller-count">{listing.review_count} reviews</p>
-        </div>
+          <ChatButton></ChatButton>
+       </div>
         <div className="listing-details__output">
           <label
             htmlFor="description"
