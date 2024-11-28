@@ -10,8 +10,9 @@ import likeInactive from "../../assets/icons/like.svg";
 import likeActive from "../../assets/icons/like-active.svg";
 import "../ListingPage/ListingPage.scss";
 import Header from "../../components/Header/Header";
-import AddToCart from "../../components/Buttons/AddToCart/AddToCart";
 import ChatButton from "../../components/Buttons/ChatButton/ChatButton";
+import AddToCart from "../../components/Buttons/AddToCart/AddToCart";
+
 
 const BASE_URL = import.meta.env.VITE_BACKEND_URL;
 
