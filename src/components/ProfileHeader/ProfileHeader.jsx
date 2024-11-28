@@ -6,18 +6,18 @@ import "../ProfileHeader/ProfileHeader.scss";
 
 function ProfileHeader() {
   return (
-    <header className="header">
-      <div className="header__logo">
+    <header className="profile-header">
+      <div className="profile-header__logo">
         <Link to="/api/listings">
-          <img src={Logo} alt="App Logo" className="header__logo-img" />
+          <img src={Logo} alt="App Logo" className="profile-header__logo-img" />
         </Link>
       </div>
-      <div className="header__icons">
+      <div className="profile-header__icons">
         <Link to="/settings">
           <img
             src={settingsIcon}
             alt="Settings"
-            className="header__icons-icon"
+            className="profile-header__icons-icon"
           />
         </Link>
       </div>

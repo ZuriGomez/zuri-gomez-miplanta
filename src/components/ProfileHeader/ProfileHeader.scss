@@ -1,13 +1,19 @@
 @use "../../../src/styles/variables" as *;
 
-.header {
+.profile-header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center; 
+    margin-top: 3rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    gap: 7.5rem;
 
-    &__logo{
-        height: 3rem;
+    &__logo {
+        &-img {
+            height: 3rem;
+        }
     }
 
     &__icons{

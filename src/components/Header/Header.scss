@@ -1,5 +1,4 @@
 @use "../../../src/styles/variables" as *;
-@use "../../../src/styles/global" as *;
 
 .header {
     display: flex;
@@ -8,6 +7,8 @@
     align-items: center;
     gap:5rem;
     margin-top: 3rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
 
     &__logo {
         &-img {
