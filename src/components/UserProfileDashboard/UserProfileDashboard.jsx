@@ -5,9 +5,11 @@ import listingsIcon from "../../assets/icons/listings.svg";
 import favoriteIcon from "../../assets/icons/favorites.svg";
 import purchasesIcon from "../../assets/icons/purchased.svg";
 import "../UserProfileDashboard/UserProfileDashboard.scss";
+import { useNavigate } from "react-router-dom";
 
 function UserProfileDashboard () {
-
+  const navigate = useNavigate();
+  
   const handleCreateListingClick = () => {
     navigate("/add-listing");
   };
