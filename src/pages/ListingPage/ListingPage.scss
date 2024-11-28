@@ -1,18 +1,18 @@
 @use "../../styles/variables" as *;
-@use "../../styles/global" as *;
+
 
 .listing-details {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-left: 1rem;
-    margin-right: 1rem;
-
+    margin-left: 2rem;
+    margin-right: 2rem;
 
     &__title {
-        font-size: 2.5rem;
+        font-size: 2rem;
         padding-top: 2rem;
         padding-bottom: 1.5rem;
+        align-self: center;
     }
 
     &__photo {
@@ -39,6 +39,11 @@
             font-size: 1rem;
             font-weight: 400;
         }
+
+        &-count {
+            padding-left: 1rem;
+            font-weight: 400;
+        }
     }
 
     &__output {
@@ -60,6 +65,9 @@
             border-radius: .5rem;
             flex-basis: 70%;
             font-weight: 400;
+            padding:.3rem 0.5rem;
+            line-height: 1.5rem;
+            text-align: center;
         }
 
         &-value1 {
@@ -68,6 +76,8 @@
             flex-basis: 70%;
             font-weight: 400;
             height: 5rem;
+            padding:.3rem 0.5rem;
+            text-align: center;
         }
 
         &-value2 {
@@ -76,6 +86,8 @@
             flex-basis: 70%;
             font-weight: 400;
             height: 4rem;
+            padding:.3rem 0.5rem;
+            text-align: center;
         }
     }
 
@@ -83,11 +95,12 @@
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+        height: 6.5rem;
         background-color: $primary-miplanta-green;
         border-radius: 1rem;
-        padding-left: 1rem;
-        padding-right: 1rem;
+        padding: 1rem 1rem;
         margin-top:2rem;
+        margin-bottom: 5rem;
 
         &__item {
             display: flex;
@@ -112,10 +125,43 @@
         }
     }
 }
+
 .listing__bar {
+    width: 100vw;
     margin-top: 2rem;
     background-color: $primary-miplanta-green ;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     flex-direction: row;
+    position: fixed;
+    bottom: 0;
+    left:50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+
+    &-icon {
+        height:4rem;
+        width: 4rem;
+        margin-left: 4rem;
+        margin-right: 2rem;
+    }
+
+    &-moreinfo {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        gap:4rem;
+        padding-left: 2rem;
+        
+
+        &__price {
+            font-size: 1.5rem;
+            padding-left: 2.5rem;
+            font-weight: 400;
+            color: $primary-miplanta-white;
+            border-left: 0.1rem solid $primary-miplanta-light_gray;
+        }
+    }
 }

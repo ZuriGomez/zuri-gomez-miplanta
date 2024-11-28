@@ -10,6 +10,7 @@ import likeInactive from "../../assets/icons/like.svg";
 import likeActive from "../../assets/icons/like_active.svg";
 import "../ListingPage/ListingPage.scss";
 import Header from "../../components/Header/Header";
+import AddToCart from "../../components/Buttons/AddToCart/AddToCart";
 
 const BASE_URL = import.meta.env.VITE_BACKEND_URL;
 
@@ -17,6 +18,7 @@ function ListingPage() {
   const { listingId } = useParams();
   const [listing, setListing] = useState(null);
   const [isLiked, setIsLiked] = useState(false);
+  const [cartCount, setCartCount] = useState(0);
 
   useEffect(() => {
     const getListing = async () => {
@@ -34,6 +36,10 @@ function ListingPage() {
 
   const handleLikeClick = () => {
     setIsLiked(!isLiked);
+  };
+
+  const handleAddToCart = () => {
+    setCartCount(cartCount + 1);
   };
 
   if (!listing) {
@@ -57,6 +63,7 @@ function ListingPage() {
             alt="Seller Avatar"
           />
           <p className="listing-details__seller-name"> {listing.seller_name}</p>
+          <p className="listing-details__seller-count">{listing.review_count} reviews</p>
         </div>
         <div className="listing-details__output">
           <label
@@ -171,11 +178,12 @@ function ListingPage() {
           <img
             src={isLiked ? likeActive : likeInactive}
             alt="Like Icon"
-            className="listing-details__bar-icon"
+            className="listing__bar-icon"
             onClick={handleLikeClick}
           />
-          <div className="listing-details__bar-moreinfo">
-            <p className="listing-details__bar-moreinfo__price"> ${listing.price} </p>
+          <div className="listing__bar-moreinfo">
+            <p className="listing__bar-moreinfo__price"> ${listing.price} </p>
+            <AddToCart onAddToCart={handleAddToCart} />
           </div>
         </section>
       </div>

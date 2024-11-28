@@ -4,8 +4,9 @@
 .listings-list {
   display: flex;
   flex-direction: column;
-//   border:1px solid $secondary-miplanta-gray;
   margin-top: 2rem;
+  margin-left: 2rem;
+  margin-right: 2rem ;
 
   &__item {
     display: flex;
@@ -45,7 +46,7 @@
       }
       
       &__price {
-        font-size: 1.5rem;
+        font-size: 1.25rem;
         color: $primary-miplanta-green;
         font-weight: 400;
       }
