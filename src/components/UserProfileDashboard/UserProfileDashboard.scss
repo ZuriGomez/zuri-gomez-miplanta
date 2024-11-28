@@ -28,12 +28,11 @@
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        gap: 4rem;
+        gap: 4.5rem;
         background-color:$primary-miplanta-green;
         padding: 1rem 2rem;
         border-radius: 1rem;
         
-
         &-item {
             display: flex;
             flex-direction: column;
@@ -54,6 +53,7 @@
                 padding-top: 0.5rem;
                 font-size: 1.25rem;
                 color:$primary-miplanta-white;
+                font-weight: 400;
             }
         }
     }

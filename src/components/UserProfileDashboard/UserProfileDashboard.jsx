@@ -25,7 +25,7 @@ function UserProfileDashboard () {
         <div className="user-profile__dashboard-item">
           <img className="user-profile__dashboard-item-icon" src={listingsIcon} alt="Listing Icon" />
           <p className="user-profile__dashboard-item-label">listings</p>
-          <p className="user-profile__dashboard-item-count">5</p>
+          <p className="user-profile__dashboard-item-count">4</p>
         </div>
         <div className="user-profile__dashboard-item">
           <img className="user-profile__dashboard-item-icon" src={favoriteIcon} alt="Favorites" />
