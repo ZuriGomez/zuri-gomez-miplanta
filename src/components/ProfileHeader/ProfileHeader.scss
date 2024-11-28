@@ -1,0 +1,19 @@
+@use "../../../src/styles/variables" as *;
+
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center; 
+
+    &__logo{
+        height: 3rem;
+    }
+
+    &__icons{
+        &-icon{
+            width:4rem;
+            height: 4rem;
+        }
+    }
+}

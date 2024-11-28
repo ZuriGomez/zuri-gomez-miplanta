@@ -1,0 +1,60 @@
+@use "../../../src/styles/variables" as *;
+
+.user-profile {
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+
+    &__avatar {
+        width:8rem;
+        height: 8rem;
+        margin-top: 2rem;
+    }
+
+    &__username {
+        margin-top: 1rem;
+        font-size: 1.5rem;
+    }
+
+    &__button {
+        margin-top: 1rem;
+        margin-bottom: 2rem;
+        width:8rem;
+    }
+
+    &__dashboard {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 4rem;
+        background-color:$primary-miplanta-green;
+        padding: 1rem 2rem;
+        border-radius: 1rem;
+        
+
+        &-item {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            &-icon {
+                width: 3rem;
+                height: 3rem;
+            }
+
+            &-label {
+                font-weight: 400;
+                color:$primary-miplanta-white;
+            }
+
+            &-count {
+                padding-top: 0.5rem;
+                font-size: 1.25rem;
+                color:$primary-miplanta-white;
+            }
+        }
+    }
+}
