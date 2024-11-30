@@ -32,7 +32,7 @@ function ReviewsList() {
   }, [sellerId]);
 
   if (error) {
-    return <div>Error: {error}</div>;
+    return <div>No reviews available for this seller.</div>;
   }
 
   if (reviews.length === 0) {
