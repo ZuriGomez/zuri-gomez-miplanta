@@ -41,6 +41,7 @@ function ReviewsList() {
 
   return (
     <div className="reviews-list">
+        <h3>{reviews.length} reviews</h3>
         {reviews.map((review) => (
           <div key={review.id} className="review">
             <h3>{review.reviewer_name}</h3>
