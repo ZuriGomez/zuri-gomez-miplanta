@@ -6,23 +6,6 @@
     justify-content:center;
     align-items: center;
 
-    &__avatar {
-        width:8rem;
-        height: 8rem;
-        margin-top: 2rem;
-    }
-
-    &__username {
-        margin-top: 1rem;
-        font-size: 1.5rem;
-    }
-
-    &__button {
-        margin-top: 1rem;
-        margin-bottom: 2rem;
-        width:8rem;
-    }
-
     &__dashboard {
         display: flex;
         flex-direction: row;
