@@ -13,6 +13,7 @@ const BASE_URL = import.meta.env.VITE_BACKEND_URL;
 function UserProfileDashboard () {
 
   const [dashboardData, setDashboardData] = useState({
+    userName: "",
     listings: 0,
     favorites: 0, // Update with backend logic when needed
     purchased: 0, // Update with backend logic when needed
@@ -30,6 +31,7 @@ function UserProfileDashboard () {
             Authorization: `Bearer ${token}`,
           },
         });
+
         const listingsCount = response.data.length;
         setDashboardData((prevData) => ({
           ...prevData,
@@ -50,7 +52,7 @@ function UserProfileDashboard () {
   return (
     <div className="user-profile">
       <img src={UserAvatar} alt="User Avatar" className="user-profile__avatar" />
-      <h2 className="user-profile__username">Lily Goodwill</h2>
+      <h2 className="user-profile__username">{dashboardData.userName || "User"}</h2>
       <div className="user-profile__button">
         <MainButton text="+ create listing" onClick={handleCreateListingClick} />
       </div>
