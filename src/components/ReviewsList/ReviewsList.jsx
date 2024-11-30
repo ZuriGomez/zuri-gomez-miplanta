@@ -1,18 +1,21 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { useParams } from "react-router-dom";
 
 const BASE_URL = import.meta.env.VITE_BACKEND_URL;
 
 function ReviewsList() {
+
   const [reviews, setReviews] = useState([]);
   const [error, setError] = useState(null);
+  const { sellerId } = useParams();
 
   useEffect(() => {
     const fetchReviews = async () => {
       try {
-        const response = await axios.get(`${BASE_URL}/api/reviews`);
+        const response = await axios.get(`${BASE_URL}/api/reviews/${sellerId}`);
         console.log(response.data);
-        setReviews(response.data);
+
         if (Array.isArray(response.data)) {
             setReviews(response.data);
           } else {
@@ -23,16 +26,17 @@ function ReviewsList() {
           console.error("Error fetching reviews:", err);
         }
       };
-  
-    fetchReviews();
-  }, []);
+    if (sellerId){
+        fetchReviews();
+    }
+  }, [sellerId]);
 
   if (error) {
     return <div>Error: {error}</div>;
   }
 
   if (reviews.length === 0) {
-    return <div>No reviews available.</div>;
+    return <div>No reviews available for this seller.</div>;
   }
 
   return (
