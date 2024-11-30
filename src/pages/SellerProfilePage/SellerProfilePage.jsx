@@ -1,7 +1,12 @@
 import React from "react";
+import ReviewsList from "../../components/ReviewsList/ReviewsList";
 
 function SellerProfilePage() {
-  return <div>hello, I'm a seller profile page</div>;
+  return (
+  <>
+  <ReviewsList/> 
+  </>
+  )
 }
 
 export default SellerProfilePage;
