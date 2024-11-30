@@ -20,7 +20,7 @@ function Header({cartCount}) {
             {cartCount > 0 && <span className="header__icons-cart_count">{cartCount}</span>}
           </div>
         </Link>
-        <Link to="/profile/:userId">
+        <Link to="/profile">
           <img
             src={avatar}
             alt="Profile"

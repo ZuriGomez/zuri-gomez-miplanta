@@ -36,7 +36,7 @@ function App() {
         <Route path="/my-listing" element={<MyListingPage />} />
 
         {/* User Profile Page */}
-        <Route path="/profile/:userId" element={<UserProfilePage />} />
+        <Route path="/profile/" element={<UserProfilePage />} />
 
         {/* Seller Profile Page */}
         <Route path="/seller/:sellerId" element={<SellerProfilePage />} />

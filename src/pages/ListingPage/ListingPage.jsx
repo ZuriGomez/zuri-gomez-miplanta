@@ -26,7 +26,7 @@ function ListingPage() {
     const getListing = async () => {
       try {
         const response = await axios.get(
-          `${BASE_URL}/api/listings/${listingId}`
+          `${BASE_URL}/api/listings/user-listings/${listingId}`
         );
         setListing(response.data);
       } catch (error) {

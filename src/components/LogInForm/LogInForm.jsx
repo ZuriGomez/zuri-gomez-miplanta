@@ -11,14 +11,17 @@ function LoginForm() {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({ email: "", password: "" });
   const [errors, setErrors] = useState({});
+
   function handleChange(event) {
     const { name, value } = event.target;
     setFormData({ ...formData, [name]: value });
   }
+
   function validateEmail(email) {
     const regEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return regEX.test(email);
   }
+
   function validateForm() {
     const newErrors = {};
     if (!formData.email || !validateEmail(formData.email)) {
@@ -40,6 +43,13 @@ function LoginForm() {
         `${BASE_URL}/api/users/login`,
         formData
       );
+
+      console.log(response);
+      
+      localStorage.setItem('jwtToken',response.data.token);
+
+      axios.defaults.headers.common["Authorization"] = `Bearer ${response.data.token}`;
+
       alert("Login successful!");
       navigate("/api/listings");
     } catch (error) {

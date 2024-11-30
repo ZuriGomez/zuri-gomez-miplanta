@@ -1,0 +1,7 @@
+@use "../../../src/styles/variables" as *;
+
+.listing-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}

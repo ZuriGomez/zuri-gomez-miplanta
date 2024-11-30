@@ -1,11 +1,14 @@
-import React from 'react'
+import React from "react";
+import AddListingForm from "../../components/AddListingForm/AddListingForm";
+import Header from "../../components/Header/Header";
 
 function AddNewListing() {
   return (
     <div>
-      hello, Im a add new listing page
+      <Header/>
+      <AddListingForm />
     </div>
-  )
+  );
 }
 
-export default AddNewListing
+export default AddNewListing;
