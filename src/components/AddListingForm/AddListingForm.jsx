@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
+import "../AddListingForm/AddListingForm.scss";
+import MainButton from "../Buttons/MainButton/MainButton";
 
 const BASE_URL = import.meta.env.VITE_BACKEND_URL;
 
@@ -60,11 +62,11 @@ function AddListingForm() {
     } else {
       const formDataObj = new FormData();
       Object.keys(formData).forEach((key) => {
-        console.log(key)
+        console.log(key);
         formDataObj.append(`${key}`, formData[key]);
       });
 
-        formDataObj.append("photo", photo);
+      formDataObj.append("photo", photo);
 
       for (let pair of formDataObj.entries()) {
         console.log(pair[0] + ": " + pair[1]);
@@ -105,223 +107,249 @@ function AddListingForm() {
 
   return (
     <form className="listing-form" onSubmit={handleSubmit}>
-      <div className="listing-form__group">
-        <label className="listing-form__label">
-          Photo:
-          <input
-            className="listing-form__input listing-form__input--file"
-            type="file"
-            name="photo"
-            onChange={handleFileChange}
-            accept="uploads/*"
-          />
-          {errors.photo && (
-            <span className="listing-form__error">{errors.photo}</span>
-          )}
+      <h1 className="listing-form__title">New Listing</h1>
+
+      <div className="listing-form__group-photo">
+        <input
+          className="listing-form__group-photo-input listing-form__group-photo-input--file"
+          type="file"
+          id="photo"
+          name="photo"
+          onChange={handleFileChange}
+          accept="uploads/*"
+        />
+        <label className="listing-form__group-photo-label" htmlFor="photo">
+          Add a photo
         </label>
+        {errors.photo && <span className="group-error">{errors.photo}</span>}
       </div>
 
       <div className="listing-form__group">
-        <label className="listing-form__label">
-          Title:
-          <input
-            className="listing-form__input"
-            type="text"
-            name="title"
-            value={formData.title}
-            onChange={handleChange}
-          />
-          {errors.title && (
-            <span className="listing-form__error">{errors.title}</span>
-          )}
+        <label className="listing-form__group-label" htmlFor="title">
+          title:
         </label>
+        <input
+          className="listing-form__group-input"
+          type="text"
+          id="title"
+          name="title"
+          value={formData.title}
+          onChange={handleChange}
+        />
+        {errors.title && (
+          <span className="listing-form__group-error">{errors.title}</span>
+        )}
       </div>
 
       <div className="listing-form__group">
-        <label className="listing-form__label">
-          Description:
-          <textarea
-            className="listing-form__input listing-form__input--textarea"
-            name="description"
-            value={formData.description}
-            onChange={handleChange}
-          ></textarea>
-          {errors.description && (
-            <span className="listing-form__error">{errors.description}</span>
-          )}
+        <label className="listing-form__group-label" htmlFor="description">
+          description:
         </label>
+        <textarea
+          className="listing-form__group-input1 listing-form__group-input1--textarea1"
+          id="description"
+          name="description"
+          value={formData.description}
+          onChange={handleChange}
+        ></textarea>
+        {errors.description && (
+          <span className="listing-form__group-error">
+            {errors.description}
+          </span>
+        )}
       </div>
 
       <div className="listing-form__group">
-        <label className="listing-form__label">
-          Maintenance:
-          <select
-            className="listing-form__input"
-            name="maintenance"
-            value={formData.maintenance}
-            onChange={handleChange}
-          >
-            <option value="">Select</option>
-            <option value="low">low</option>
-            <option value="medium">medium</option>
-            <option value="high">high</option>
-          </select>
-          {errors.maintenance && (
-            <span className="listing-form__error">{errors.maintenance}</span>
-          )}
+        <label className="listing-form__group-label" htmlFor="maintenance">
+          maintenance:
         </label>
+        <select
+          className="listing-form__group-input"
+          id="maintenance"
+          name="maintenance"
+          value={formData.maintenance}
+          onChange={handleChange}
+        >
+          <option value="">Select</option>
+          <option value="low">Low</option>
+          <option value="medium">Medium</option>
+          <option value="high">High</option>
+        </select>
+        {errors.maintenance && (
+          <span className="listing-form__group-error">
+            {errors.maintenance}
+          </span>
+        )}
       </div>
 
       <div className="listing-form__group">
-        <label className="listing-form__label">
-          Pot Included:
-          <select
-            className="listing-form__input"
-            name="pot_included"
-            value={formData.pot_included}
-            onChange={handleChange}
-          >
-            <option value="">Select</option>
-            <option value="yes">yes</option>
-            <option value="no">no</option>
-          </select>
-          {errors.pot_included && (
-            <span className="listing-form__error">{errors.pot_included}</span>
-          )}
+        <label className="listing-form__group-label" htmlFor="pot_included">
+          pot included:
         </label>
+        <select
+          className="listing-form__group-input"
+          id="pot_included"
+          name="pot_included"
+          value={formData.pot_included}
+          onChange={handleChange}
+        >
+          <option value="">Select</option>
+          <option value="yes">Yes</option>
+          <option value="no">No</option>
+        </select>
+        {errors.pot_included && (
+          <span className="listing-form__group-error">
+            {errors.pot_included}
+          </span>
+        )}
       </div>
 
       {formData.pot_included === "yes" && (
         <div className="listing-form__group">
-          <label className="listing-form__label">
-            Pot Description:
-            <input
-              className="listing-form__input"
-              type="text"
-              name="pot_description"
-              value={formData.pot_description}
-              onChange={handleChange}
-            />
-            {errors.pot_description && (
-              <span className="listing-form__error">
-                {errors.pot_description}
-              </span>
-            )}
+          <label
+            className="listing-form__group-label"
+            htmlFor="pot_description"
+          >
+            pot description:
           </label>
+          <input
+            className="listing-form__group-input2"
+            type="text"
+            id="pot_description"
+            name="pot_description"
+            value={formData.pot_description}
+            onChange={handleChange}
+          />
+          {errors.pot_description && (
+            <span className="listing-form__group-error">
+              {errors.pot_description}
+            </span>
+          )}
         </div>
       )}
 
       <div className="listing-form__group">
-        <label className="listing-form__label">
-          Height (cm):
-          <input
-            className="listing-form__input"
-            type="number"
-            name="height"
-            value={formData.height}
-            onChange={handleChange}
-          />
-          {errors.height && (
-            <span className="listing-form__error">{errors.height}</span>
-          )}
+        <label className="listing-form__group-label" htmlFor="height">
+          height (cm):
         </label>
+        <input
+          className="listing-form__group-input"
+          type="number"
+          id="height"
+          name="height"
+          value={formData.height}
+          onChange={handleChange}
+        />
+        {errors.height && (
+          <span className="listing-form__group-error">{errors.height}</span>
+        )}
       </div>
 
       <div className="listing-form__group">
-        <label className="listing-form__label">
-          Sunlight:
-          <select
-            className="listing-form__input"
-            name="sunlight"
-            value={formData.sunlight}
-            onChange={handleChange}
-          >
-            <option value="">Select</option>
-            <option value="full sun">full sun</option>
-            <option value="partial sun">partial sun</option>
-            <option value="partial shade">partial shade</option>
-            <option value="full shade">full shade</option>
-          </select>
-          {errors.sunlight && (
-            <span className="listing-form__error">{errors.sunlight}</span>
-          )}
+        <label className="listing-form__group-label" htmlFor="sunlight">
+          sunlight:
         </label>
+        <select
+          className="listing-form__group-input"
+          id="sunlight"
+          name="sunlight"
+          value={formData.sunlight}
+          onChange={handleChange}
+        >
+          <option value="">Select</option>
+          <option value="full sun">Full Sun</option>
+          <option value="partial sun">Partial Sun</option>
+          <option value="partial shade">Partial Shade</option>
+          <option value="full shade">Full Shade</option>
+        </select>
+        {errors.sunlight && (
+          <span className="listing-form__group-error">{errors.sunlight}</span>
+        )}
       </div>
 
       <div className="listing-form__group">
-        <label className="listing-form__label">
-          Temperature (°C):
-          <input
-            className="listing-form__input"
-            type="text"
-            name="temperature"
-            value={formData.temperature}
-            onChange={handleChange}
-          />
-          {errors.temperature && (
-            <span className="listing-form__error">{errors.temperature}</span>
-          )}
+        <label className="listing-form__group-label" htmlFor="temperature">
+          temperature (°C):
         </label>
+        <input
+          className="listing-form__group-input"
+          type="text"
+          id="temperature"
+          name="temperature"
+          value={formData.temperature}
+          onChange={handleChange}
+        />
+        {errors.temperature && (
+          <span className="listing-form__group-error">
+            {errors.temperature}
+          </span>
+        )}
       </div>
 
       <div className="listing-form__group">
-        <label className="listing-form__label">
-          Watering:
-          <select
-            className="listing-form__input"
-            name="watering"
-            value={formData.watering}
-            onChange={handleChange}
-          >
-            <option value="">Select</option>
-            <option value="once per week">once per week</option>
-            <option value="every two weeks">every two weeks</option>
-            <option value="every month">every month</option>
-          </select>
-          {errors.watering && (
-            <span className="listing-form__error">{errors.watering}</span>
-          )}
+        <label className="listing-form__group-label" htmlFor="watering">
+          watering:
         </label>
+        <select
+          className="listing-form__group-input"
+          id="watering"
+          name="watering"
+          value={formData.watering}
+          onChange={handleChange}
+        >
+          <option value="">Select</option>
+          <option value="once per week">Once per week</option>
+          <option value="every two weeks">Every two weeks</option>
+          <option value="every month">Every month</option>
+        </select>
+        {errors.watering && (
+          <span className="listing-form__group-error">{errors.watering}</span>
+        )}
       </div>
 
       <div className="listing-form__group">
-        <label className="listing-form__label">
-          Price ($):
-          <input
-            className="listing-form__input"
-            type="number"
-            name="price"
-            value={formData.price}
-            onChange={handleChange}
-          />
-          {errors.price && (
-            <span className="listing-form__error">{errors.price}</span>
-          )}
+        <label className="listing-form__group-label" htmlFor="price">
+          price ($):
         </label>
+        <input
+          className="listing-form__group-input"
+          type="number"
+          id="price"
+          name="price"
+          value={formData.price}
+          onChange={handleChange}
+        />
+        {errors.price && (
+          <span className="listing-form__group-error">{errors.price}</span>
+        )}
       </div>
 
       <div className="listing-form__group">
-        <label className="listing-form__label">
-          Delivery:
-          <select
-            className="listing-form__input"
-            name="delivery"
-            value={formData.delivery}
-            onChange={handleChange}
-          >
-            <option value="">Select</option>
-            <option value="pickup">pickup</option>
-            <option value="delivery">delivery</option>
-          </select>
-          {errors.delivery && (
-            <span className="listing-form__error">{errors.delivery}</span>
-          )}
+        <label className="listing-form__group-label" htmlFor="delivery">
+          delivery:
         </label>
+        <select
+          className="listing-form__group-input"
+          id="delivery"
+          name="delivery"
+          value={formData.delivery}
+          onChange={handleChange}
+        >
+          <option value="">Select</option>
+          <option value="pickup">Pickup</option>
+          <option value="delivery">Delivery</option>
+        </select>
+        {errors.delivery && (
+          <span className="listing-form__group-error">{errors.delivery}</span>
+        )}
       </div>
-
-      <button className="listing-form__submit" type="submit">
-        Create Listing
-      </button>
+      <div className="listing-form__buttons">
+        <MainButton
+          text="Create Listing"
+          type="submit"
+          onClick={handleSubmit}
+        />
+      </div>
     </form>
   );
 }
