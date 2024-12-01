@@ -8,7 +8,7 @@ import axios from "axios";
 
 const BASE_URL = import.meta.env.VITE_BACKEND_URL;
 
-function UserProfileDashboard () {
+function UserProfileDashboard ({ isLiked, handleLikeClick }) {
   const [dashboardData, setDashboardData] = useState({
     listings: 0,
     favorites: 0, // Update with backend logic when needed
@@ -40,6 +40,17 @@ function UserProfileDashboard () {
     fetchUserListings();
   }, []);
 
+  const updateFavoritesCount = (change) => {
+    setDashboardData((prevData) => ({
+      ...prevData,
+      favorites: isLiked ? prevData.favorites + 1 : prevData.favorites - 1,
+    }));
+  };
+
+  const handleFavoriteClick = () => {
+    handleLikeClick();
+    updateFavoritesCount(); // Increment or decrement the count
+  };
 
   return (
     <div className="user-profile">
@@ -50,7 +61,7 @@ function UserProfileDashboard () {
           <p className="user-profile__dashboard-item-label">listings</p>
           <p className="user-profile__dashboard-item-count">{dashboardData.listings}</p>
         </div>
-        <div className="user-profile__dashboard-item">
+        <div className="user-profile__dashboard-item" onClick={handleFavoriteClick}>
           <img className="user-profile__dashboard-item-icon" src={favoriteIcon} alt="Favorites" />
           <p className="user-profile__dashboard-item-label">favorites</p>
           <p className="user-profile__dashboard-item-count">{dashboardData.favorites}</p>

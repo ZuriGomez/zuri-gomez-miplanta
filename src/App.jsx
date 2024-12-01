@@ -8,9 +8,17 @@ import AddNewListing from "./pages/AddNewListing/AddNewListing";
 import MyListingPage from "./pages/MyListingPage/MyListingPage";
 import UserProfilePage from "./pages/UserProfilePage/UserProfilePage";
 import SellerProfilePage from "./pages/SellerProfilePage/SellerProfilePage";
+import { useState } from "react";
 import "./App.scss";
 
 function App() {
+
+  const [isLiked, setIsLiked] = useState(false);
+
+  const handleLikeClick = () => {
+    setIsLiked(!isLiked);
+  };
+
   return (
     <BrowserRouter>
       <Routes>
@@ -27,7 +35,7 @@ function App() {
         <Route path="/api/listings" element={<HomePage />} />
 
         {/* Single Listing details Page Route */}
-        <Route path="/api/listings/:listingId" element={<ListingPage />} />
+        <Route path="/api/listings/:listingId" element={<ListingPage isLiked={isLiked} handleLikeClick={handleLikeClick} />} />
 
         {/* Add New Listing Page Route  */}
         <Route path="/add-listing" element={<AddNewListing />} />

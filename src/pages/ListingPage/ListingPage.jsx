@@ -16,10 +16,9 @@ import AddToCart from "../../components/Buttons/AddToCart/AddToCart";
 
 const BASE_URL = import.meta.env.VITE_BACKEND_URL;
 
-function ListingPage() {
+function ListingPage({ isLiked, handleLikeClick}) {
   const { listingId } = useParams();
   const [listing, setListing] = useState(null);
-  const [isLiked, setIsLiked] = useState(false);
   const [cartCount, setCartCount] = useState(0);
 
   useEffect(() => {
@@ -36,9 +35,13 @@ function ListingPage() {
     getListing();
   }, [listingId]);
 
-  const handleLikeClick = () => {
-    setIsLiked(!isLiked);
-  };
+  // const handleLikeClick = () => {
+  //   setIsLiked((prevIsLiked) => {
+  //     const newLikeState = !prevIsLiked;
+  //     updateFavoritesCount(newLikeState ? 1 : -1);
+  //     return newLikeState;
+  //   });
+  // };
 
   const handleAddToCart = () => {
     setCartCount(cartCount + 1);
