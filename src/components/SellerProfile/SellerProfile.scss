@@ -1,0 +1,30 @@
+@use "../../../src/styles/variables" as *;
+
+.seller-profile {
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+    
+    &__avatar {
+        width:8rem;
+        height: 8rem;
+        margin-top: 2rem;
+    }
+
+    &__username {
+        margin-top: 1rem;
+        font-size: 1.5rem;
+    }
+
+    &__follow-button {
+        margin-top: 1rem;
+        width:8rem;
+    }
+
+    &__chat-button {
+        margin-top: 1rem;
+        margin-bottom: 2rem;
+        width:8rem;
+    }
+}

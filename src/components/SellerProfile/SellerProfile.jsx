@@ -37,8 +37,10 @@ function SellerProfile() {
         {seller.user_name || "Loading..."}
       </h2>
 
-      <div className="seller-profile__button">
+      <div className="seller-profile__follow-button">
         <MainButton text="+ follow" />
+      </div>
+      <div className="seller-profile__chat-button">
         <MainButton text="chat" />
       </div>
     </div>

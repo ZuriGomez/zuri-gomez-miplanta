@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 import "../AddListingForm/AddListingForm.scss";
 import MainButton from "../Buttons/MainButton/MainButton";
 
 const BASE_URL = import.meta.env.VITE_BACKEND_URL;
 
 function AddListingForm() {
+  const navigate = useNavigate();
   const token = localStorage.getItem("jwtToken");
   const [formData, setFormData] = useState({
     title: "",
@@ -99,6 +101,7 @@ function AddListingForm() {
         });
         setPhoto(null);
         setErrors({});
+        navigate("/api/listings");
       } catch (error) {
         console.error("Error creating listing", error);
       }
