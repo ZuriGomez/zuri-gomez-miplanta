@@ -10,6 +10,7 @@ miPlanta is a mobile-first marketplace designed to connect plant enthusiasts and
 2. Navigate to the client directory: `cd zuri-gomez-miplanta`
 3. Install dependencies: `npm install`
 4. Create a `.env` file in the root of the client directory and add the following:
+VITE_BACKEND_URL=http://localhost:8080
 5. Start the client: `npm run dev`
 6. Access the app at: `http://localhost:5173`
 
