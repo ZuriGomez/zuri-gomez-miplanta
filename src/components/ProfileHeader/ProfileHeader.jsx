@@ -13,7 +13,8 @@ function ProfileHeader() {
         </Link>
       </div>
       <div className="profile-header__icons">
-        <Link to="/settings">
+      {/* this button is not completely funtional for this initial sprint*/}
+        <Link to=""> 
           <img
             src={settingsIcon}
             alt="Settings"
