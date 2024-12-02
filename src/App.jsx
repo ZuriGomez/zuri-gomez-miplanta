@@ -5,7 +5,6 @@ import LogInPage from "./pages/LogInPage/LogInPage";
 import HomePage from "./pages/HomePage/HomePage";
 import ListingPage from "./pages/ListingPage/ListingPage";
 import AddNewListing from "./pages/AddNewListing/AddNewListing";
-import MyListingPage from "./pages/MyListingPage/MyListingPage";
 import UserProfilePage from "./pages/UserProfilePage/UserProfilePage";
 import SellerProfilePage from "./pages/SellerProfilePage/SellerProfilePage";
 import { useState } from "react";
@@ -39,9 +38,6 @@ function App() {
 
         {/* Add New Listing Page Route  */}
         <Route path="/add-listing" element={<AddNewListing />} />
-
-        {/* User listing details page */}
-        <Route path="/my-listing" element={<MyListingPage />} />
 
         {/* User Profile Page */}
         <Route path="/profile/" element={<UserProfilePage />} />
