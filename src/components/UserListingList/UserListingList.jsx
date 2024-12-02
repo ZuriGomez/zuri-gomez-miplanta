@@ -38,7 +38,7 @@ function UserListingList() {
 
   return (
     <div className="user listings-list">
-      <h3 className="user listings-list__list-title">My Listings</h3>
+      <h3 className="user listings-list__list-title">my listings</h3>
       {listings.map((listing) => (
         <Link
           to={`/api/listings/${listing.id}`}
