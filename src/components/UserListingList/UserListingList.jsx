@@ -14,7 +14,6 @@ function UserListingList() {
     const fetchListings = async () => {
       try {
         const token = localStorage.getItem("jwtToken");
-        console.log(token);
         const response = await axios.get(
           `${BASE_URL}/api/listings/user-listings`,
           {
