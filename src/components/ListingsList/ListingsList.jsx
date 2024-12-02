@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import "./ListingsList.scss";
+import "../ListingsList/ListingsList.scss";
 
 const BASE_URL = import.meta.env.VITE_BACKEND_URL;
 

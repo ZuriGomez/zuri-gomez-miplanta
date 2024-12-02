@@ -12,18 +12,21 @@
     flex-direction: row;
     width: 100%;
     cursor: pointer;
+    border-radius: 1.25rem;
+    padding: 0.5rem 0;
+    border-radius: 1.25rem;
 
     &-wrapper {
       flex: 0 1 30%;
-      overflow: hidden;
       height: 7rem;
-      border: 1px solid $secondary-miplanta-gray;
       border-right: none;
+     
 
       &__image {
         width: 100%;
         height: 100%;
         object-fit: cover;
+        border-radius: 2rem 0 0 2rem;
       }
     }
 
@@ -34,8 +37,8 @@
       flex-direction: column;
       justify-content: flex-start;
       background-color: $primary-miplanta-white;
-      border: 1px solid $secondary-miplanta-gray;
       text-align: left;
+      border-radius: 0 2rem 2rem 0;
 
       &__title {
         padding-top: 0.5rem;
