@@ -25,9 +25,11 @@ function ListingsList({ searchQuery = "" }) {
     navigate(`/api/listings/${listingId}`);
   };
 
-  const filteredListings = listings.filter((listing) =>
+  const filteredListings = listings
+  .filter((listing) =>
     listing.title?.toLowerCase().includes(searchQuery.toLowerCase())
-  );
+  )
+  .sort((a,b) => b.id - a.id);
 
   return (
     <div className="listings-list">
