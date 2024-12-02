@@ -15,7 +15,6 @@ function ReviewsList() {
     const fetchReviews = async () => {
       try {
         const response = await axios.get(`${BASE_URL}/api/reviews/${sellerId}`);
-        console.log(response.data);
 
         if (Array.isArray(response.data)) {
           setReviews(response.data);

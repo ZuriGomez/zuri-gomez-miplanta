@@ -43,8 +43,6 @@ function LoginForm() {
         `${BASE_URL}/api/users/login`,
         formData
       );
-
-      console.log(response);
       
       localStorage.setItem('jwtToken',response.data.token);
 
