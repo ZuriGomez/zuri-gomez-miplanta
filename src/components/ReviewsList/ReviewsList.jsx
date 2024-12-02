@@ -47,7 +47,11 @@ function ReviewsList() {
       <h3 className="reviews-list__title">{reviews.length} reviews</h3>
       {reviews.map((review) => (
         <div key={review.id} className="reviews-list__review">
-          <img className="reviews-list__review-avatar" src={avatar} alt="Reviewer Avatar" />
+          <img
+            className="reviews-list__review-avatar"
+            src={avatar}
+            alt="Reviewer Avatar"
+          />
           <div className="reviews-list__review-container">
             <div className="reviews-list__review-container-wrapper">
               <h3 className="reviews-list__review-container-wrapper__name">

@@ -10,15 +10,18 @@ function UserProfilePage() {
   const [isLiked, setIsLiked] = useState(false);
 
   const handleLikeClick = () => {
-    setIsLiked((prevState) => !prevState); // Toggle like status
+    setIsLiked((prevState) => !prevState);
   };
 
   return (
-    <div>
+    <>
       <ProfileHeader />
-      <UserProfileDashboard isLiked={isLiked} handleLikeClick={handleLikeClick} />
+      <UserProfileDashboard
+        isLiked={isLiked}
+        handleLikeClick={handleLikeClick}
+      />
       <UserListingsList />
-    </div>
+    </>
   );
 }
 

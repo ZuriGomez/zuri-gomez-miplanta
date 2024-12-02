@@ -7,11 +7,11 @@
   margin-left: 2rem;
   margin-right: 2rem;
 
-    &__list-title{
-        font-size: 1.5rem;
-        font-weight: 400;
-        padding-bottom: 1rem;
-    }
+  &__list-title {
+    font-size: 1.5rem;
+    font-weight: 400;
+    padding-bottom: 1rem;
+  }
 
   &__item {
     display: flex;
@@ -43,12 +43,12 @@
       background-color: $primary-miplanta-white;
       border: 1px solid $secondary-miplanta-gray;
       text-align: left;
-      
+
       &__top {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        
+
         &__title {
           padding-top: 0.25rem;
           font-size: 1.2rem;

@@ -5,7 +5,7 @@ import cartIcon from "../../assets/icons/cart.svg";
 import avatar from "../../assets/images/avatar-placeholder.png";
 import "../Header/Header.scss";
 
-function Header({cartCount}) {
+function Header({ cartCount }) {
   return (
     <header className="header">
       <div className="header__logo">
@@ -16,16 +16,18 @@ function Header({cartCount}) {
       <div className="header__icons">
         <Link to="#">
           <div className="header__icons-cart">
-            <img src={cartIcon} alt="Cart" className="header__icons-cart_icon" />
-            {cartCount > 0 && <span className="header__icons-cart_count">{cartCount}</span>}
+            <img
+              src={cartIcon}
+              alt="Cart"
+              className="header__icons-cart_icon"
+            />
+            {cartCount > 0 && (
+              <span className="header__icons-cart_count">{cartCount}</span>
+            )}
           </div>
         </Link>
         <Link to="/profile">
-          <img
-            src={avatar}
-            alt="Profile"
-            className="header__icons-avatar"
-          />
+          <img src={avatar} alt="Profile" className="header__icons-avatar" />
         </Link>
       </div>
     </header>

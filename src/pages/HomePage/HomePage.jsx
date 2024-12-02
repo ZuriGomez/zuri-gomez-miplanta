@@ -24,7 +24,10 @@ function HomePage() {
       <SearchBar onSearch={handleSearch} />
       <ListingsList searchQuery={searchQuery} />
       <div className="home-page__button">
-        <MainButton text="+ create listing" onClick={handleCreateListingClick} />
+        <MainButton
+          text="+ create listing"
+          onClick={handleCreateListingClick}
+        />
       </div>
     </>
   );

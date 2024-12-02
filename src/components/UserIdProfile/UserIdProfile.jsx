@@ -18,14 +18,13 @@ function UserIdProfile() {
   useEffect(() => {
     const fetchUserInfo = async () => {
       try {
-        const token = localStorage.getItem("jwtToken"); // Get the JWT token from localStorage
+        const token = localStorage.getItem("jwtToken");
         const response = await axios.get(`${BASE_URL}/api/listings/info`, {
           headers: {
-            Authorization: `Bearer ${token}`, // Pass the token in the Authorization header
+            Authorization: `Bearer ${token}`,
           },
         });
 
-        // Set the username from the response
         setUsername(response.data.username);
       } catch (error) {
         console.error("Error fetching user info:", error);

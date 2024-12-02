@@ -11,8 +11,8 @@ const BASE_URL = import.meta.env.VITE_BACKEND_URL;
 function UserProfileDashboard ({ isLiked, handleLikeClick }) {
   const [dashboardData, setDashboardData] = useState({
     listings: 0,
-    favorites: 0, // Update with backend logic when needed
-    purchased: 0, // Update with backend logic when needed
+    favorites: 0, // This functionality is not available for this sprint as it was not included yet in the back-end
+    purchased: 0, // This functionality is not available for this sprint as it was not included yet in the back-end
   });
   
   useEffect(() => {
@@ -49,7 +49,7 @@ function UserProfileDashboard ({ isLiked, handleLikeClick }) {
 
   const handleFavoriteClick = () => {
     handleLikeClick();
-    updateFavoritesCount(); // Increment or decrement the count
+    updateFavoritesCount(); 
   };
 
   return (

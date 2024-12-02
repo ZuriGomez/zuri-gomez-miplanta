@@ -32,7 +32,11 @@ function ListingsList({ searchQuery = "" }) {
   return (
     <div className="listings-list">
       {filteredListings.map((listing) => (
-        <div className="listings-list__item" key={listing.id} onClick={() => handleItemClick(listing.id)}>
+        <div
+          className="listings-list__item"
+          key={listing.id}
+          onClick={() => handleItemClick(listing.id)}
+        >
           <div className="listings-list__item-wrapper">
             <img
               src={`${BASE_URL}/${listing.photo}`}
@@ -41,8 +45,12 @@ function ListingsList({ searchQuery = "" }) {
             />
           </div>
           <div className="listings-list__item-details">
-            <h3 className="listings-list__item-details__title">{listing.title}</h3>
-            <p className="listings-list__item-details__price">${listing.price}</p>
+            <h3 className="listings-list__item-details__title">
+              {listing.title}
+            </h3>
+            <p className="listings-list__item-details__price">
+              ${listing.price}
+            </p>
           </div>
         </div>
       ))}

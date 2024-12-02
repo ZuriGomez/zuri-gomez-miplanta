@@ -4,10 +4,10 @@ import Header from "../../components/Header/Header";
 
 function AddNewListing() {
   return (
-    <div>
-      <Header/>
+    <>
+      <Header />
       <AddListingForm />
-    </div>
+    </>
   );
 }
 

@@ -13,10 +13,9 @@ import Header from "../../components/Header/Header";
 import ChatButton from "../../components/Buttons/ChatButton/ChatButton";
 import AddToCart from "../../components/Buttons/AddToCart/AddToCart";
 
-
 const BASE_URL = import.meta.env.VITE_BACKEND_URL;
 
-function ListingPage({ isLiked, handleLikeClick}) {
+function ListingPage({ isLiked, handleLikeClick }) {
   const { listingId } = useParams();
   const [listing, setListing] = useState(null);
   const [cartCount, setCartCount] = useState(0);
@@ -34,14 +33,6 @@ function ListingPage({ isLiked, handleLikeClick}) {
     };
     getListing();
   }, [listingId]);
-
-  // const handleLikeClick = () => {
-  //   setIsLiked((prevIsLiked) => {
-  //     const newLikeState = !prevIsLiked;
-  //     updateFavoritesCount(newLikeState ? 1 : -1);
-  //     return newLikeState;
-  //   });
-  // };
 
   const handleAddToCart = () => {
     setCartCount(cartCount + 1);
@@ -62,17 +53,25 @@ function ListingPage({ isLiked, handleLikeClick}) {
           className="listing-details__photo"
         />
         <div className="listing-details__seller">
-          <Link to={`/seller/${listing.user_id}`} className="listing-details__seller-wrapper">
+          <Link
+            to={`/seller/${listing.user_id}`}
+            className="listing-details__seller-wrapper"
+          >
             <img
               className="listing-details__seller-wrapper-avatar"
               src={SellerAvatar}
               alt="Seller Avatar"
             />
-            <p className="listing-details__seller-wrapper-name"> {listing.seller_name}</p>
+            <p className="listing-details__seller-wrapper-name">
+              {" "}
+              {listing.seller_name}
+            </p>
           </Link>
-          <p className="listing-details__seller-count">{listing.review_count} reviews</p>
+          <p className="listing-details__seller-count">
+            {listing.review_count} reviews
+          </p>
           <ChatButton></ChatButton>
-       </div>
+        </div>
         <div className="listing-details__output">
           <label
             htmlFor="description"

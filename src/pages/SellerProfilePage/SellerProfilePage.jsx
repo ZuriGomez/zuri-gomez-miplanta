@@ -5,12 +5,12 @@ import Header from "../../components/Header/Header";
 
 function SellerProfilePage() {
   return (
-  <>
-    <Header/>
-    <SellerProfile/>
-    <ReviewsList/> 
-  </>
-  )
+    <>
+      <Header />
+      <SellerProfile />
+      <ReviewsList />
+    </>
+  );
 }
 
 export default SellerProfilePage;

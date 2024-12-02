@@ -1,18 +1,19 @@
 @use "../../../styles//variables" as *;
 
 .add-to-cart-button {
-    padding: 0.5rem 0.5rem;
-    border-radius: 1rem;
-    border: none;
-    cursor: pointer;
-    background-color: $primary-miplanta-white;
+  padding: 0.5rem 0.5rem;
+  border-radius: 1rem;
+  border: none;
+  cursor: pointer;
+  background-color: $primary-miplanta-white;
 
-    &:hover,:focus {
-        border: .2rem solid $main-buttons-miplanta-active;
-    }
+  &:hover,
+  :focus {
+    border: 0.2rem solid $main-buttons-miplanta-active;
+  }
 
-    &:active {
-        background-color: $main-buttons-miplanta-active;
-        color: $primary-miplanta-white;
-    }
+  &:active {
+    background-color: $main-buttons-miplanta-active;
+    color: $primary-miplanta-white;
+  }
 }

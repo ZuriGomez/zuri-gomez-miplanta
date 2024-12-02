@@ -1,179 +1,176 @@
 @use "../../styles/variables" as *;
 
-
 .listing-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 2rem;
+  margin-right: 2rem;
+
+  &__title {
+    font-size: 2rem;
+    padding-top: 2rem;
+    padding-bottom: 1.5rem;
+    align-self: center;
+  }
+
+  &__photo {
+    height: 10rem;
+    width: 10rem;
+    object-fit: cover;
+    align-self: center;
+    border: 1px solid #bfbdbc;
+  }
+
+  &__seller {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin-left: 2rem;
-    margin-right: 2rem;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1rem;
 
-    &__title {
-        font-size: 2rem;
-        padding-top: 2rem;
-        padding-bottom: 1.5rem;
-        align-self: center;
+    &-wrapper {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 0.5rem;
+      cursor: pointer;
+      text-decoration: none;
+
+      &-avatar {
+        width: 3rem;
+        height: 3rem;
+      }
+
+      &-name {
+        font-size: 1rem;
+        font-weight: 400;
+        text-decoration: none;
+      }
     }
 
-    &__photo {
-        height: 10rem;
-        width: 10rem;
-        object-fit: cover;
-        align-self: center;
-        border: 1px solid #bfbdbc;
+    &-count {
+      font-weight: 400;
+    }
+  }
+
+  &__output {
+    padding-top: 1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: top;
+    gap: 1rem;
+
+    &-label {
+      font-weight: 400;
+      text-align: left;
+      flex-basis: 30%;
     }
 
-    &__seller {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        padding-top: 1rem;
-
-        &-wrapper {
-            display: flex;
-            flex-direction: row;
-            justify-content: flex-start;
-            align-items: center;
-            gap:.5rem;
-            cursor: pointer;
-            text-decoration: none;
-        
-            &-avatar {
-                width: 3rem;
-                height: 3rem;
-            }
-
-            &-name {
-                font-size: 1rem;
-                font-weight: 400;
-                text-decoration: none;
-            }
-        }
-
-        &-count {
-            font-weight: 400;
-        }
+    &-value {
+      background-color: $primary-miplanta-white;
+      border-radius: 1rem;
+      flex-basis: 70%;
+      font-weight: 400;
+      padding: 0.3rem 0.5rem;
+      line-height: 1.5rem;
+      text-align: center;
     }
 
-    &__output {
-        padding-top: 1rem;
-        display: flex;
-        flex-direction: row;
-        align-items: top;
-        gap:1rem;
-    
-
-        &-label {
-            font-weight: 400;
-            text-align: left;
-            flex-basis: 30%;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
-        }
-
-        &-value {
-            background-color: $primary-miplanta-white;
-            border-radius: 1rem;
-            flex-basis: 70%;
-            font-weight: 400;
-            padding:.3rem 0.5rem;
-            line-height: 1.5rem;
-            text-align: center;
-        }
-
-        &-value1 {
-            background-color: $primary-miplanta-white;
-            border-radius: .5rem;
-            flex-basis: 70%;
-            font-weight: 400;
-            height: 5rem;
-            padding:.3rem 0.5rem;
-            text-align: center;
-        }
-
-        &-value2 {
-            background-color: $primary-miplanta-white;
-            border-radius: .5rem;
-            flex-basis: 70%;
-            font-weight: 400;
-            height: 4rem;
-            padding:.3rem 0.5rem;
-            text-align: center;
-        }
+    &-value1 {
+      background-color: $primary-miplanta-white;
+      border-radius: 0.5rem;
+      flex-basis: 70%;
+      font-weight: 400;
+      height: 5rem;
+      padding: 0.3rem 0.5rem;
+      text-align: center;
     }
 
-    &-box {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        height: 6.5rem;
-        background-color: $primary-miplanta-green;
-        border-radius: 1rem;
-        padding: 1rem 1rem;
-        margin-top:2rem;
-        margin-bottom: 5rem;
-
-        &__item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-
-            &-icon {
-                width: 3rem;
-                height: 3rem;
-            }
-
-            &-label {
-                font-size: .625rem;
-                font-weight: 400;
-                color: $primary-miplanta-white;
-            }
-
-            &-input {
-                font-size: 0.5rem;
-                color: $primary-miplanta-white;
-            }
-        }
+    &-value2 {
+      background-color: $primary-miplanta-white;
+      border-radius: 0.5rem;
+      flex-basis: 70%;
+      font-weight: 400;
+      height: 4rem;
+      padding: 0.3rem 0.5rem;
+      text-align: center;
     }
+  }
+
+  &-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 6.5rem;
+    background-color: $primary-miplanta-green;
+    border-radius: 1rem;
+    padding: 1rem 1rem;
+    margin-top: 2rem;
+    margin-bottom: 5rem;
+
+    &__item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      &-icon {
+        width: 3rem;
+        height: 3rem;
+      }
+
+      &-label {
+        font-size: 0.625rem;
+        font-weight: 400;
+        color: $primary-miplanta-white;
+      }
+
+      &-input {
+        font-size: 0.5rem;
+        color: $primary-miplanta-white;
+      }
+    }
+  }
 }
 
 .listing__bar {
-    width: 100vw;
-    height: 4rem;
-    margin-top: 2rem;
-    background-color: $primary-miplanta-green ;
+  width: 100vw;
+  height: 4rem;
+  margin-top: 2rem;
+  background-color: $primary-miplanta-green;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  align-items: center;
+
+  &-icon {
+    height: 3rem;
+    width: 3rem;
+    margin-left: 4rem;
+    margin-right: 2rem;
+  }
+
+  &-moreinfo {
     display: flex;
-    justify-content: flex-start;
     flex-direction: row;
-    position: fixed;
-    bottom: 0;
-    left:50%;
-    right: 50%;
-    margin-left: -50vw;
-    margin-right: -50vw;
+    justify-content: flex-start;
     align-items: center;
+    gap: 3.25rem;
+    padding-left: 2rem;
 
-    &-icon {
-        height:3rem;
-        width:3rem;
-        margin-left: 4rem;
-        margin-right: 2rem;
+    &__price {
+      font-size: 1.5rem;
+      padding-left: 2.5rem;
+      font-weight: 400;
+      color: $primary-miplanta-white;
+      border-left: 0.1rem solid $primary-miplanta-light_gray;
     }
-
-    &-moreinfo {
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-start;
-        align-items: center;
-        gap:3.25rem;
-        padding-left: 2rem;
-        
-
-        &__price {
-            font-size: 1.5rem;
-            padding-left: 2.5rem;
-            font-weight: 400;
-            color: $primary-miplanta-white;
-            border-left: 0.1rem solid $primary-miplanta-light_gray;
-        }
-    }
+  }
 }

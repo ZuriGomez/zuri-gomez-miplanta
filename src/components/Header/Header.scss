@@ -1,44 +1,43 @@
 @use "../../../src/styles/variables" as *;
 
 .header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5rem;
+  margin-top: 3rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+
+  &__logo {
+    &-img {
+      height: 3rem;
+    }
+  }
+
+  &__icons {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
     align-items: center;
-    gap:5rem;
-    margin-top: 3rem;
-    padding-left: 2rem;
-    padding-right: 2rem;
+    gap: 1rem;
 
-    &__logo {
-        &-img {
-            height: 3rem;
-        }
+    &-cart {
+      display: flex;
+      flex-direction: row;
+
+      &_icon {
+        width: 2.5rem;
+        height: 2.5rem;
+      }
+
+      &_count {
+        font-size: 0.25rem;
+        font-weight: 600;
+      }
     }
-
-    &__icons {
-        display: flex;
-        align-items: center;
-        gap:1rem;
-
-        &-cart {
-            display: flex;
-            flex-direction: row;
-        
-            &_icon {
-                width:2.5rem;
-                height: 2.5rem;
-            }
-
-            &_count {
-                font-size: .25rem;
-                font-weight: 600;
-            }
-        }
-        &-avatar {
-            width: 3rem;
-            height: 3rem;
-        }
+    &-avatar {
+      width: 3rem;
+      height: 3rem;
     }
+  }
 }
-
